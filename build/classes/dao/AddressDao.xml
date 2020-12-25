@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD cONFIG 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dzl.weather.dao.AddressDao">
+    <select id="queryProvince" resultType="Province">
+            SELECT id,name FROM address WHERE pid = 1
+    </select>
+    <select id="queryCity" parameterType="int" resultType="Province">
+            SELECT id,name FROM address WHERE pid = #{city}
+    </select>
+    <select id="queryCounty" parameterType="int" resultType="County">
+            SELECT id,name FROM address WHERE pid = #{county}
+    </select>
+</mapper>
